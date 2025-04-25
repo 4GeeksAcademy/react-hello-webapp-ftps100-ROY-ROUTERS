@@ -28,9 +28,11 @@ contactService.createAgenda = async (slug)=>{
 
         const resp= await fetch('https://playground.4geeks.com/contact/agendas/'+slug,{
             method :'POST',
+           
             headers : {
                 'Content-Type' : 'application/json'
-            }
+            },
+            body: JSON.stringify({ slug }),
         })
         const data = await resp.json()
         return data
